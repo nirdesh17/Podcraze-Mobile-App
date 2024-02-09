@@ -62,7 +62,9 @@ flutter:
   assets:
     - assets/images/1_Light_splash screen4k.png
     - assets/images/loading_indication.png
-    - assets/images/2_Light_welcome screen4x.png
+    - assets/images/onboarding 1.png
+    - assets/images/onboarding 2.png
+    - assets/images/onboarding 3.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

@@ -31,6 +31,8 @@ migrate_working_dir/
 .pub/
 /build/
 
+#assets folder
+/assets/images/
 # Symbolication related
 app.*.symbols
 
@@ -43,4 +45,5 @@ app.*.map.json
 /android/app/release
 
 
-images/
+
+
