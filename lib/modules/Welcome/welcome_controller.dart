@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:podcraze/model/welocme_model.dart';
-
-import 'package:podcraze/routes/app_route.dart';
-
-
+import '../../model/welocme_model.dart';
+import '../../routes/app_route.dart';
 
 class WelcomeController extends GetxController {
   var selectedPageIndex = 0.obs;
