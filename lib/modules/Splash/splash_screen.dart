@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:podcraze/modules/Splash/splash_controller.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -20,10 +18,10 @@ class SplashScreen extends StatelessWidget {
                   children: [
                     Image(
                       image: AssetImage(
-                        'assets/images/1_Light_splash screen4k.png'),
+                          'assets/images/1_Light_splash screen4k.PNG'),
                     ),
                     Text(
-                      'Procraze',
+                      'Podcraze',
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,

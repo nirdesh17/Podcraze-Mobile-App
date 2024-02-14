@@ -9,11 +9,11 @@ class AppPages {
   static final List<GetPage> pages = [
     GetPage(
         name: AppRoutes.splashScreen,
-        page: () => const SplashScreen(),
+        page: () => SplashScreen(),
         binding: SplashBinding()),
     GetPage(
-        name: AppRoutes.welcomeScreen, 
-        page: ()=> WelcomeScreen(),
+        name: AppRoutes.welcomeScreen,
+        page: () => WelcomeScreen(),
         binding: WelcomeBinding()),
   ];
 }
