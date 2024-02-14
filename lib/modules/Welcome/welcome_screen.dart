@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:podcraze/modules/Welcome/welcome_controller.dart';
+
+import 'welcome_controller.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -13,7 +14,8 @@ class WelcomeScreen extends StatelessWidget {
               child: PageView.builder(
                 controller: controller.pageController,
                 itemCount: controller.contents.length,
-                onPageChanged: (index) => controller.selectedPageIndex.value = index,
+                onPageChanged: (index) =>
+                    controller.selectedPageIndex.value = index,
                 itemBuilder: (_, i) => Padding(
                   padding: const EdgeInsets.fromLTRB(50, 100, 50, 0),
                   child: Column(
@@ -79,7 +81,9 @@ class WelcomeScreen extends StatelessWidget {
   Container buildDot(int index, BuildContext context) {
     return Container(
       height: 10,
-      width: Get.find<WelcomeController>().selectedPageIndex.value == index ? 25 : 10,
+      width: Get.find<WelcomeController>().selectedPageIndex.value == index
+          ? 25
+          : 10,
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),

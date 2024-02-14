@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:podcraze/routes/app_route.dart';
+
+import '../../routes/app_route.dart';
 
 class SplashController extends GetxController {
   final localStorage = GetStorage();
@@ -12,7 +13,6 @@ class SplashController extends GetxController {
 
   @override
   void onReady() {
-    print("SplashController is ready");
     Future.delayed(
         const Duration(seconds: 3),
         () => Get.offNamed(

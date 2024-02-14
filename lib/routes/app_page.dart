@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
-import 'package:podcraze/modules/Splash/splash_binding.dart';
-import 'package:podcraze/modules/Splash/splash_screen.dart';
-import 'package:podcraze/modules/Welcome/welcome_screen.dart';
-import 'package:podcraze/modules/Welcome/welcome_binding.dart';
-import 'package:podcraze/routes/app_route.dart';
+
+import '../modules/Welcome/welcome_binding.dart';
+import '../modules/splash/splash_binding.dart';
+import '../modules/splash/splash_screen.dart';
+import '../modules/welcome/welcome_screen.dart';
+import 'app_route.dart';
 
 class AppPages {
   static final List<GetPage> pages = [
