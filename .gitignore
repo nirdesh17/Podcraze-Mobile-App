@@ -32,7 +32,7 @@ migrate_working_dir/
 /build/
 
 #assets folder
-/assets/images/
+
 # Symbolication related
 app.*.symbols
 
