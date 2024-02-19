@@ -8,8 +8,8 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SplashController splashController = Get.find<SplashController>();
-    return const Scaffold(
+    return GetBuilder<SplashController>(
+      builder: (controller) =>  Scaffold(
       body: Center(
         child: Stack(
           alignment: Alignment.center,
@@ -22,7 +22,7 @@ class SplashScreen extends StatelessWidget {
                   children: [
                     Image(
                       image: AssetImage(
-                          'assets/images/1_Light_splash screen4k.PNG'),
+                          'assets/images/logo.png'),
                     ),
                     Text(
                       'Podcraze',
@@ -44,6 +44,6 @@ class SplashScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ));
   }
 }

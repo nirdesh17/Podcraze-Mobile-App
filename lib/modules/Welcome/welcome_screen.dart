@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../welcome/welcome_controller.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -37,7 +38,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
+            Obx(()=>Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: List.generate(
@@ -45,8 +46,8 @@ class WelcomeScreen extends StatelessWidget {
                   (index) => buildDot(index, context),
                 ),
               ),
-            ),
-            Container(
+            )),
+            Obx(()=> Container(
               height: 60,
               margin: EdgeInsets.all(40),
               width: double.infinity,
@@ -70,7 +71,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
+            )),
           ],
         ),
       ),
