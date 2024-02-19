@@ -10,6 +10,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<SplashController>(
       builder: (controller) =>  Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Stack(
           alignment: Alignment.center,

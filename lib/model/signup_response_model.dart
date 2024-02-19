@@ -33,24 +33,24 @@ class Result {
     required this.lastname,
     required this.email,
     required this.id,
-    required this.createdAt,
-    required this.updatedAt,
+    // required this.createdAt,
+    // required this.updatedAt,
   });
 
   final String? firstname;
   final String? lastname;
   final String? email;
   final String? id;
-  final DateTime? createdAt;
-  final DateTime? updatedAt;
+  // final DateTime? createdAt;
+  // final DateTime? updatedAt;
 
   factory Result.fromJson(Map<String, dynamic> json) => Result(
         firstname: json["firstname"],
         lastname: json["lastname"],
         email: json["email"],
         id: json["_id"],
-        createdAt: DateTime.parse(json["createdAt"]),
-        updatedAt: DateTime.parse(json["updatedAt"]),
+        // createdAt: DateTime.parse(json["createdAt"]??""),
+        // updatedAt: DateTime.parse(json["updatedAt"]??""),
       );
   
   Map<String, dynamic> toJson() => {
@@ -58,7 +58,7 @@ class Result {
         "lastname": lastname,
         "email": email,
         "_id": id,
-        "createdAt": createdAt?.toIso8601String(),
-        "updatedAt": updatedAt?.toIso8601String(),
+        // "createdAt": createdAt?.toIso8601String(),
+        // "updatedAt": updatedAt?.toIso8601String(),
       };
 }

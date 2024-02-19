@@ -5,7 +5,7 @@ import 'enums/snackbar_status.dart';
 
 class AppUtils {
   static void showSnackBar(String message,
-      {String title = "Error", MessageStatus status = MessageStatus.NORMAL}) {
+      {String title = "Message", MessageStatus status = MessageStatus.NORMAL}) {
     Color backgroundColor;
     switch(status){
       case MessageStatus.SUCCESS:

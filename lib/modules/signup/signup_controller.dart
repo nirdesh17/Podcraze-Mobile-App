@@ -56,7 +56,7 @@ class SignupController extends GetxController {
           await signUpApi.signUp(signUpPostBodyModel: signUpPostBodyModel);
       if (response.code == 200 || response.code == 210) {
         isLoading.value = false;
-        Get.offAllNamed(AppRoutes.splashScreen);
+        Get.toNamed(AppRoutes.splashScreen);
         AppUtils.showSnackBar("Sign Up Succesful", status: MessageStatus.SUCCESS);
       }
       else{

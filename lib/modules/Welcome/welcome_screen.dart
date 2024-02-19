@@ -8,6 +8,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<WelcomeController>(
       builder: (controller) => Scaffold(
+        backgroundColor: Colors.white,
         body: Column(
           children: [
             Expanded(

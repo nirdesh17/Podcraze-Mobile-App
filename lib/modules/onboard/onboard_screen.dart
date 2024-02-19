@@ -10,6 +10,7 @@ class OnboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<OnboardController>(
         builder: (controller) => Scaffold(
+          backgroundColor: Colors.white,
               body: Center(
                 child: Stack(
                   alignment: Alignment.center,

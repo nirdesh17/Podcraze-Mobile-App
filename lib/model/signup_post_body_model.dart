@@ -6,10 +6,10 @@ class SignUpPostBodyModel {
     required this.password,
   });
 
-  final String firstname;
-  final String lastname;
-  final String email;
-  final String password;
+  final String? firstname;
+  final String? lastname;
+  final String? email;
+  final String? password;
 
   factory SignUpPostBodyModel.fromJson(Map<String, dynamic> json) =>
       SignUpPostBodyModel(
