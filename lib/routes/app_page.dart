@@ -8,6 +8,8 @@ import '../modules/onboard/onboard_binding.dart';
 import '../modules/onboard/onboard_screen.dart';
 import '../modules/signup/signup_binding.dart';
 import '../modules/signup/signup_screen.dart';
+import '../modules/signin/signin_binding.dart';
+import '../modules/signin/signin_screen.dart';
 import 'app_route.dart';
 
 class AppPages {
@@ -28,5 +30,9 @@ class AppPages {
         name: AppRoutes.signupScreen, 
         page: (() => SignupScreen()),
         binding: SignupBinding()),
+    GetPage(
+        name: AppRoutes.signinScreen,
+        page: () => SigninScreen(),
+        binding: SigninBinding()),
   ];
 }

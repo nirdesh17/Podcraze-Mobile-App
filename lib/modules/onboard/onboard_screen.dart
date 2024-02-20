@@ -10,7 +10,7 @@ class OnboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<OnboardController>(
         builder: (controller) => Scaffold(
-          backgroundColor: Colors.white,
+              backgroundColor: Colors.white,
               body: Center(
                 child: Stack(
                   alignment: Alignment.center,
@@ -39,7 +39,6 @@ class OnboardScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          
                           child: Text(
                             "Sign UP",
                             style: const TextStyle(
@@ -64,7 +63,7 @@ class OnboardScreen extends StatelessWidget {
                                   color: Color(0xFFAB3CFF), fontSize: 18),
                               recognizer: TapGestureRecognizer()
                                 ..onTap =
-                                    () => Get.toNamed(AppRoutes.splashScreen))
+                                    () => Get.toNamed(AppRoutes.signinScreen))
                         ])))
                   ],
                 ),
