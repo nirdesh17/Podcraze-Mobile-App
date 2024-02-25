@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 import '../../model/signup_post_body_model.dart';
 import '../../utils/app_utils.dart';
+import '../../utils/constants.dart';
 import '../../utils/enums/snackbar_status.dart';
 import '../../apis/signup_api.dart';
 import '../../routes/app_route.dart';
@@ -56,16 +56,14 @@ class SignupController extends GetxController {
           await signUpApi.signUp(signUpPostBodyModel: signUpPostBodyModel);
       if (response.code == 200 || response.code == 210) {
         isLoading.value = false;
-        Get.toNamed(AppRoutes.splashScreen);
-        AppUtils.showSnackBar("Sign Up Succesful", status: MessageStatus.SUCCESS);
-      }
-      else{
+        Get.toNamed(AppRoutes.verifyOtpScreen,
+            arguments: {ARG_EMAIL: emailController.text});
+      } else {
         isLoading.value = false;
         AppUtils.showSnackBar(response.message ?? "Error",
             status: MessageStatus.ERROR);
       }
-    }
-    else{
+    } else {
       AppUtils.showSnackBar(errorMessage, status: MessageStatus.ERROR);
     }
   }

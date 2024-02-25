@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/verify_otp/verify_otp_binding.dart';
+import '../modules/verify_otp/verify_otp_screen.dart';
 import '../modules/welcome/welcome_binding.dart';
 import '../modules/splash/splash_binding.dart';
 import '../modules/splash/splash_screen.dart';
@@ -34,5 +36,9 @@ class AppPages {
         name: AppRoutes.signinScreen,
         page: () => SigninScreen(),
         binding: SigninBinding()),
+    GetPage(
+        name: AppRoutes.verifyOtpScreen, 
+        page: ()=> VerifyOtpScreen(),
+        binding: VerifyOtpBinding()),
   ];
 }
