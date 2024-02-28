@@ -1,5 +1,6 @@
 // Commonly used Arguments
 const ARG_EMAIL="email";
+const ARG_OTP="otp";
 const ARG_FROM_FORGOT_PASSWORD= false;
 
 // Local Storage Keys

@@ -78,11 +78,11 @@ class VerifyOtpController extends GetxController {
         isLoading.value = false;
         // ignore: unrelated_type_equality_checks
         if (check == true) {
-          Get.offAllNamed(AppRoutes.signinScreen);
-          AppUtils.showSnackBar(
-              "Verification Successful. Password Reset Successful",
-              title: "Verified",
-              status: MessageStatus.SUCCESS);
+          Get.offAllNamed(AppRoutes.createNewPasswordScreen, arguments: {
+            ARG_EMAIL: email.value,
+            ARG_OTP: otp,
+          });
+          
         } else {
           Get.offAllNamed(AppRoutes.splashScreen);
           AppUtils.showSnackBar("Verification Successful. Sign Up Successful",

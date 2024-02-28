@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'app_utils.dart';
-import '../apis/api_error_response_model.dart';
+import '../model/api_error_response_model.dart';
 import 'constants.dart';
 import 'enums/snackbar_status.dart';
 
@@ -34,8 +34,7 @@ class ErrorHandlingInterceptor extends Interceptor {
       AppUtils.showSnackBar("Session Expired Sign Again",
           status: MessageStatus.ERROR);
       AppUtils.logout();
-    }
-    else {
+    } else {
       if (!_isErrorCodeHandled) {
         print(
             "Error = ${ApiErrorResponseModel.fromJson(err.response?.data).message}");
@@ -47,4 +46,3 @@ class ErrorHandlingInterceptor extends Interceptor {
     super.onError(err, handler);
   }
 }
-
