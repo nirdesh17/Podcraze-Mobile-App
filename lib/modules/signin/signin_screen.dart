@@ -157,6 +157,21 @@ class SigninScreen extends StatelessWidget {
                                       autovalidateMode:
                                           AutovalidateMode.onUserInteraction,
                                     ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        Get.toNamed(AppRoutes.forgotpasswordScreen);
+                                      },
+                                      child: Text(
+                                        "Forgot Password?",
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            color: Color(0xFFAB3CFF),
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    )
                                   ])),
                           SizedBox(
                             height: 70,

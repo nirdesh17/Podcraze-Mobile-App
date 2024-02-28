@@ -3,7 +3,7 @@ import '../model/signin_response_model.dart';
 import '../utils/dio_client.dart';
 
 class SignInApi {
-  Future<SignInResponseModel> signUp(
+  Future<SignInResponseModel> signIn(
       {required SignInPostBodyModel signInPostBodyModel}) async {
     try {
       final response = await DioClient.getDioInstance()

@@ -12,6 +12,8 @@ import '../modules/signup/signup_binding.dart';
 import '../modules/signup/signup_screen.dart';
 import '../modules/signin/signin_binding.dart';
 import '../modules/signin/signin_screen.dart';
+import '../modules/forgot_password/forgot_password_binding.dart';
+import '../modules/forgot_password/forgot_password_screen.dart';
 import 'app_route.dart';
 
 class AppPages {
@@ -40,5 +42,9 @@ class AppPages {
         name: AppRoutes.verifyOtpScreen, 
         page: ()=> VerifyOtpScreen(),
         binding: VerifyOtpBinding()),
+    GetPage(
+        name: AppRoutes.forgotpasswordScreen,
+        page: ()=> ForgotPasswordScreen(),
+        binding: ForgotPasswordBinding()),
   ];
 }

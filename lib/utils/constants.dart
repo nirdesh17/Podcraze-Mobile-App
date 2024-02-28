@@ -1,5 +1,6 @@
 // Commonly used Arguments
 const ARG_EMAIL="email";
+const ARG_FROM_FORGOT_PASSWORD= false;
 
 // Local Storage Keys
 const KEY_USER_DATA = "key_user_data";

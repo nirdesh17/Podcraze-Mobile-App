@@ -29,13 +29,18 @@ class VerifyOtpController extends GetxController {
 
   var isLoading = false.obs;
   var email = "".obs;
+  var check = false.obs;
 
   @override
   void onInit() {
+    final arguments = Get.arguments;
     if (arguments != null) {
-      email.value = arguments[ARG_EMAIL];
-      super.onInit();
+      email.value =
+          arguments[ARG_EMAIL] ?? ""; // Use default value if ARG_EMAIL is null
+      check.value = arguments[ARG_FROM_FORGOT_PASSWORD] ??
+          false; // Use default value if ARG_FROM_FORGOT_PASSWORD is null
     }
+    super.onInit();
   }
 
   var errorMessage = "";
@@ -71,19 +76,26 @@ class VerifyOtpController extends GetxController {
 
       if (response.code == 200) {
         isLoading.value = false;
-        Get.offAllNamed(AppRoutes.splashScreen);
-        AppUtils.showSnackBar(
-            "Verification Successful. Sign Up Successful",
-            title: "Verified",
-            status: MessageStatus.SUCCESS);
+        // ignore: unrelated_type_equality_checks
+        if (check == true) {
+          Get.offAllNamed(AppRoutes.signinScreen);
+          AppUtils.showSnackBar(
+              "Verification Successful. Password Reset Successful",
+              title: "Verified",
+              status: MessageStatus.SUCCESS);
+        } else {
+          Get.offAllNamed(AppRoutes.splashScreen);
+          AppUtils.showSnackBar("Verification Successful. Sign Up Successful",
+              title: "Verified", status: MessageStatus.SUCCESS);
+        }
       } else {
         isLoading.value = false;
         AppUtils.showSnackBar(response.message ?? "Verification Failed",
             title: "Error", status: MessageStatus.ERROR);
       }
-    }else{
+    } else {
       AppUtils.showSnackBar(errorMessage,
-      title: "Error", status: MessageStatus.ERROR);
+          title: "Error", status: MessageStatus.ERROR);
     }
   }
 }

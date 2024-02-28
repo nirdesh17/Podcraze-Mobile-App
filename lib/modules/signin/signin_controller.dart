@@ -45,7 +45,7 @@ class SigninController extends GetxController {
       isLoading.value = true;
 
       var response =
-          await signInApi.signUp(signInPostBodyModel: signInPostBodyModel);
+          await signInApi.signIn(signInPostBodyModel: signInPostBodyModel);
 
       if (response.code == 200 || response.code == 210) {
         GetStorage().remove(KEY_IS_API_ERROR_HANDLE);
