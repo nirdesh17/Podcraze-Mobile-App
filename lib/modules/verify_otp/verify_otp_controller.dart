@@ -84,8 +84,8 @@ class VerifyOtpController extends GetxController {
           });
           
         } else {
-          Get.offAllNamed(AppRoutes.splashScreen);
-          AppUtils.showSnackBar("Verification Successful. Sign Up Successful",
+          Get.offAllNamed(AppRoutes.signinScreen);
+          AppUtils.showSnackBar("Verification Successful. Please Login to continue.",
               title: "Verified", status: MessageStatus.SUCCESS);
         }
       } else {

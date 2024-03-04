@@ -16,6 +16,8 @@ import '../modules/forgot_password/forgot_password_binding.dart';
 import '../modules/forgot_password/forgot_password_screen.dart';
 import '../modules/create_new_password/create_new_password_binding.dart';
 import '../modules/create_new_password/create_new_password_screen.dart';
+import '../modules/interest_category/interest_category_binding.dart';
+import '../modules/interest_category/interest_category_screen.dart';
 import 'app_route.dart';
 
 class AppPages {
@@ -33,7 +35,7 @@ class AppPages {
         page: () => OnboardScreen(),
         binding: OnboardBinding()),
     GetPage(
-        name: AppRoutes.signupScreen, 
+        name: AppRoutes.signupScreen,
         page: (() => SignupScreen()),
         binding: SignupBinding()),
     GetPage(
@@ -41,17 +43,20 @@ class AppPages {
         page: () => SigninScreen(),
         binding: SigninBinding()),
     GetPage(
-        name: AppRoutes.verifyOtpScreen, 
-        page: ()=> VerifyOtpScreen(),
+        name: AppRoutes.verifyOtpScreen,
+        page: () => VerifyOtpScreen(),
         binding: VerifyOtpBinding()),
     GetPage(
         name: AppRoutes.forgotPasswordScreen,
-        page: ()=> ForgotPasswordScreen(),
+        page: () => ForgotPasswordScreen(),
         binding: ForgotPasswordBinding()),
     GetPage(
         name: AppRoutes.createNewPasswordScreen,
-        page: ()=> CreateNewPasswordScreen(),
-        binding: CreateNewPasswordBinding()
-    )
+        page: () => CreateNewPasswordScreen(),
+        binding: CreateNewPasswordBinding()),
+    GetPage(
+        name: AppRoutes.interestCategoryScreen,
+        page: () => InterestCategoryScreen(),
+        bindings: [InterestCategoryBinding()]),
   ];
 }

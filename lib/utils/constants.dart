@@ -1,8 +1,9 @@
 // Commonly used Arguments
-const ARG_EMAIL="email";
-const ARG_OTP="otp";
-const ARG_FROM_FORGOT_PASSWORD= false;
-
+const ARG_EMAIL = "email";
+const ARG_OTP = "otp";
+const ARG_FROM_FORGOT_PASSWORD = false;
+const ARG_TOKEN = "token";
+const ARG_USER_ID = "id";
 // Local Storage Keys
 const KEY_USER_DATA = "key_user_data";
 const KEY_IS_API_ERROR_HANDLE = "key_is_api_error_handle";
