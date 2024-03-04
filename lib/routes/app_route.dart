@@ -8,4 +8,5 @@ class AppRoutes {
   static const String forgotPasswordScreen = '/forgotPasswordScreen';
   static const String createNewPasswordScreen= '/createNewPasswordScreen';
   static const String interestCategoryScreen='/interestCategoryScreen';
+  static const String subscribeShowScreen='/subscribeShowScreen';
 }

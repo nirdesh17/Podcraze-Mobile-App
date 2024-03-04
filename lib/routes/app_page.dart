@@ -58,5 +58,9 @@ class AppPages {
         name: AppRoutes.interestCategoryScreen,
         page: () => InterestCategoryScreen(),
         bindings: [InterestCategoryBinding()]),
+    GetPage(
+        name: AppRoutes.subscribeShowScreen,
+        page: () => InterestCategoryScreen(),
+        bindings: [InterestCategoryBinding()]),
   ];
 }

@@ -1,11 +1,10 @@
 import 'package:get/get.dart';
-// import 'package:podcraze/routes/app_route.dart';
 
 import '../../apis/interest_category_api.dart';
 import '../../model/interest_category_response_model.dart';
 import '../../model/user_interest_category_put_body_model.dart';
+import '../../routes/app_route.dart';
 import '../../utils/app_utils.dart';
-import '../../utils/constants.dart';
 import '../../utils/enums/snackbar_status.dart';
 
 class InterestCategoryController extends GetxController {
@@ -15,23 +14,19 @@ class InterestCategoryController extends GetxController {
   List<InterestCategory> categories = <InterestCategory>[].obs;
   List<UserInterestCategory> selectedCategories = <UserInterestCategory>[].obs;
   var token = "".obs;
-  var id = 0.obs;
   final arguments = Get.arguments;
-
+  var userId = "";
 
   @override
   void onInit() {
-    if (arguments != null) {
-      token.value = arguments[ARG_TOKEN] ?? "";
-      id.value = arguments[ARG_USER_ID] ?? 0;
-    }
     super.onInit();
+    userId = AppUtils.loginUserDetail().result?.id.toString() ?? "";
     fetchCategories();
   }
 
   void fetchCategories() async {
     isLoading.value = true;
-    var response = await interestCategoryApi.fetchCategory(token.value);
+    var response = await interestCategoryApi.fetchCategory();
     if (response.code == 200 || response.code == 210) {
       isLoading.value = false;
       categories.assignAll(response.result ?? []);
@@ -47,11 +42,10 @@ class InterestCategoryController extends GetxController {
     UserInterestCategoryPutBodyModel userInterestCategoryPutBodyModel =
         UserInterestCategoryPutBodyModel(result: selectedCategories.toList());
     var response = await interestCategoryApi.updateCategory(
-        token.value, id.value, userInterestCategoryPutBodyModel);
+        userId, userInterestCategoryPutBodyModel);
     if (response.code == 200 || response.code == 210) {
       isLoading.value = false;
-      
-      // Get.toNamed(AppRoutes.splashScreen);
+      Get.offAllNamed(AppRoutes.subscribeShowScreen);
       print("category added");
     } else {
       AppUtils.showSnackBar("not added",
@@ -63,11 +57,12 @@ class InterestCategoryController extends GetxController {
     category.isSelected = !category.isSelected;
     if (category.isSelected) {
       // Convert InterestCategory to UserInterestCategory before adding
-      selectedCategories.add(UserInterestCategory(id: category.id, name: category.name));
+      selectedCategories
+          .add(UserInterestCategory(id: category.id, name: category.name));
     } else {
-      selectedCategories.removeWhere((e) => e.id == category.id); // Remove by id
+      selectedCategories
+          .removeWhere((e) => e.id == category.id); // Remove by id
     }
     update(); // Update the UI after selection change
-}
-
+  }
 }

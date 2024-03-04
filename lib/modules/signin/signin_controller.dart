@@ -51,11 +51,7 @@ class SigninController extends GetxController {
         GetStorage().remove(KEY_IS_API_ERROR_HANDLE);
         localStorage.write(KEY_USER_DATA, response.toJson());
         isLoading.value = false;
-        Get.offNamed(AppRoutes.interestCategoryScreen,
-            arguments: {
-              ARG_USER_ID: response.result?.id, // Assuming id is a property of the result object
-              ARG_TOKEN: response.result?.token, // Assuming token is a property of the result object
-              });
+        Get.offNamed(AppRoutes.interestCategoryScreen,);
         AppUtils.showSnackBar("Sign In Succesful", status: MessageStatus.SUCCESS);
       } else {
         isLoading.value = false;
