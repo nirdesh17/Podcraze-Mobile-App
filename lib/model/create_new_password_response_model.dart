@@ -9,7 +9,8 @@ class CreateNewPasswordResponseModel {
   final String? message;
   final int? code;
 
-  factory CreateNewPasswordResponseModel.fromJson(Map<String, dynamic> json) => CreateNewPasswordResponseModel(
+  factory CreateNewPasswordResponseModel.fromJson(Map<String, dynamic> json) =>
+      CreateNewPasswordResponseModel(
         status: json["status"],
         message: json["message"],
         code: json["code"],

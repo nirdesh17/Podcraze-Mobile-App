@@ -13,58 +13,65 @@ class OnboardScreen extends StatelessWidget {
               backgroundColor: Colors.white,
               body: Center(
                 child: Stack(
-                  alignment: Alignment.center,
                   children: [
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Image(
-                            image: AssetImage('assets/images/lets_you_in.png')),
-                      ],
-                    ),
-                    Positioned(
-                      bottom: 200,
-                      child: Container(
-                        height: 60,
-                        width: 350,
-                        child: TextButton(
-                          onPressed: () => controller.forwardAction(),
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                              Color(0xFFAB3CFF),
-                            ),
-                            shape: MaterialStateProperty.all<OutlinedBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                            ),
-                          ),
-                          child: Text(
-                            "Sign UP",
-                            style: const TextStyle(
-                              fontSize: 26,
-                              color: Colors.white,
-                            ),
+                        Center(
+                          child: Image(
+                            image: AssetImage('assets/images/lets_you_in.png'),
+                            height: 240,
                           ),
                         ),
-                      ),
+                      ],
                     ),
-                    Positioned(
-                        bottom: 150,
-                        child: RichText(
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        RichText(
                             text: TextSpan(children: [
                           TextSpan(
                               style:
-                                  TextStyle(color: Colors.black, fontSize: 18),
+                                  TextStyle(color: Colors.black, fontSize: 16),
                               text: "Already have an account?"),
                           TextSpan(
                               text: " Sign In",
                               style: TextStyle(
-                                  color: Color(0xFFAB3CFF), fontSize: 18),
+                                  color: Color(0xFFAB3CFF),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold),
                               recognizer: TapGestureRecognizer()
                                 ..onTap =
                                     () => Get.toNamed(AppRoutes.signinScreen))
-                        ])))
+                        ])),
+                        Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(16),
+                          child: TextButton(
+                            onPressed: () => controller.forwardAction(),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                Color(0xFFAB3CFF),
+                              ),
+                              shape: MaterialStateProperty.all<OutlinedBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            ),
+                            child: Text(
+                              "Sign Up",
+                              style: const TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),

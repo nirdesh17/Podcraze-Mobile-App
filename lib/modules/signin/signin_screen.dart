@@ -162,7 +162,8 @@ class SigninScreen extends StatelessWidget {
                                     ),
                                     InkWell(
                                       onTap: () {
-                                        Get.toNamed(AppRoutes.forgotPasswordScreen);
+                                        Get.toNamed(
+                                            AppRoutes.forgotPasswordScreen);
                                       },
                                       child: Text(
                                         "Forgot Password?",
@@ -186,7 +187,6 @@ class SigninScreen extends StatelessWidget {
                                 child: Text(
                                   "Sign In",
                                   style: const TextStyle(
-                                    fontSize: 26,
                                     color: Colors.white,
                                   ),
                                 ),

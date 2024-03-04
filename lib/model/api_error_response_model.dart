@@ -12,9 +12,9 @@ class ApiErrorResponseModel {
         message: json["message"],
         status: json["status"],
       );
-    
+
   Map<String, dynamic> toJson() => {
-    "message": message,
-    "status": status,
-  };
+        "message": message,
+        "status": status,
+      };
 }

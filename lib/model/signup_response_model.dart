@@ -52,7 +52,7 @@ class Result {
         // createdAt: DateTime.parse(json["createdAt"]??""),
         // updatedAt: DateTime.parse(json["updatedAt"]??""),
       );
-  
+
   Map<String, dynamic> toJson() => {
         "firstname": firstname,
         "lastname": lastname,

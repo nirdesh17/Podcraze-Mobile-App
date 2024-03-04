@@ -40,7 +40,8 @@ class InterestCategoryController extends GetxController {
   void sendCategories() async {
     isLoading.value = true;
     UserInterestCategoryPutBodyModel userInterestCategoryPutBodyModel =
-        UserInterestCategoryPutBodyModel(result: selectedCategories.toList());
+        UserInterestCategoryPutBodyModel(
+            userInterest: selectedCategories.toList());
     var response = await interestCategoryApi.updateCategory(
         userId, userInterestCategoryPutBodyModel);
     if (response.code == 200 || response.code == 210) {
@@ -48,6 +49,7 @@ class InterestCategoryController extends GetxController {
       Get.offAllNamed(AppRoutes.subscribeShowScreen);
       print("category added");
     } else {
+      isLoading.value = false;
       AppUtils.showSnackBar("not added",
           title: "Error", status: MessageStatus.ERROR);
     }

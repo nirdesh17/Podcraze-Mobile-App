@@ -36,7 +36,7 @@ class AppUtils {
   }
 
   static SignInResponseModel loginUserDetail() {
-    return SignInResponseModel.fromJson((GetStorage().read(KEY_USER_DATA)));
+    return SignInResponseModel.fromJson(GetStorage().read(KEY_USER_DATA));
   }
 
   static void logout() async {

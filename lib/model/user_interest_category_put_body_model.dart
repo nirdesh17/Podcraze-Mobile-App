@@ -1,22 +1,22 @@
 class UserInterestCategoryPutBodyModel {
   UserInterestCategoryPutBodyModel({
-    required this.result,
+    required this.userInterest,
   });
 
-  final List<UserInterestCategory>? result;
+  final List<UserInterestCategory>? userInterest;
 
   factory UserInterestCategoryPutBodyModel.fromJson(
           Map<String, dynamic> json) =>
       UserInterestCategoryPutBodyModel(
-        result: List<UserInterestCategory>.from(
-            json["result"].map((x) => UserInterestCategory.fromJson(x))),
+        userInterest: List<UserInterestCategory>.from(json["user_interests"]
+            .map((x) => UserInterestCategory.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
-        "result": List<dynamic>.from(result!.map((x) => x.toJson())),
+        "user_interests":
+            List<dynamic>.from(userInterest!.map((x) => x.toJson())),
       };
 }
-
 
 class UserInterestCategory {
   UserInterestCategory({

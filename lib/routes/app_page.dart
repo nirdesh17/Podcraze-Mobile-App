@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/subscribe_show/subscribe_show_binding.dart';
+import '../modules/subscribe_show/subscribe_show_screen.dart';
 import '../modules/verify_otp/verify_otp_binding.dart';
 import '../modules/verify_otp/verify_otp_screen.dart';
 import '../modules/welcome/welcome_binding.dart';
@@ -57,10 +59,10 @@ class AppPages {
     GetPage(
         name: AppRoutes.interestCategoryScreen,
         page: () => InterestCategoryScreen(),
-        bindings: [InterestCategoryBinding()]),
+        binding: InterestCategoryBinding()),
     GetPage(
         name: AppRoutes.subscribeShowScreen,
-        page: () => InterestCategoryScreen(),
-        bindings: [InterestCategoryBinding()]),
+        page: () => SubscribeShowScreen(),
+        binding: SubscribeShowBinding()),
   ];
 }

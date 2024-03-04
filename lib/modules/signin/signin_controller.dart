@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-
 import '../../model/signin_post_body_model.dart';
 import '../../routes/app_route.dart';
 import '../../utils/constants.dart';
@@ -46,23 +45,23 @@ class SigninController extends GetxController {
 
       var response =
           await signInApi.signIn(signInPostBodyModel: signInPostBodyModel);
-
       if (response.code == 200 || response.code == 210) {
         GetStorage().remove(KEY_IS_API_ERROR_HANDLE);
-        localStorage.write(KEY_USER_DATA, response.toJson());
+        await localStorage.write(KEY_USER_DATA, response.toJson());
         isLoading.value = false;
-        Get.offNamed(AppRoutes.interestCategoryScreen,);
-        AppUtils.showSnackBar("Sign In Succesful", status: MessageStatus.SUCCESS);
+        Get.offNamed(
+          AppRoutes.interestCategoryScreen,
+        );
+        AppUtils.showSnackBar("Sign In Succesful",
+            status: MessageStatus.SUCCESS);
       } else {
         isLoading.value = false;
         AppUtils.showSnackBar(response.message ?? "Error",
             status: MessageStatus.ERROR);
       }
+    } else {
+      isLoading.value = false;
+      AppUtils.showSnackBar(errorMessage, status: MessageStatus.ERROR);
     }
-    else {
-        isLoading.value = false;
-        AppUtils.showSnackBar(errorMessage,
-            status: MessageStatus.ERROR);
-      }
   }
 }

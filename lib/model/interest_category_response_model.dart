@@ -17,7 +17,8 @@ class InterestCategoryResponseModel {
         code: json["code"],
         message: json["message"],
         result: List<InterestCategory>.from(json["result"].map((x) =>
-            InterestCategory.fromJson(x))), // Map list of items to InterestCategory objects
+            InterestCategory.fromJson(
+                x))), // Map list of items to InterestCategory objects
       );
 
   Map<String, dynamic> toJson() => {
@@ -28,7 +29,6 @@ class InterestCategoryResponseModel {
             (x) => x.toJson())), // Map list of InterestCategory objects to JSON
       };
 }
-
 
 class InterestCategory {
   InterestCategory({
@@ -52,5 +52,3 @@ class InterestCategory {
         "name": name,
       };
 }
-
-
