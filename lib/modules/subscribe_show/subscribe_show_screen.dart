@@ -11,12 +11,6 @@ class SubscribeShowScreen extends StatelessWidget {
     return GetBuilder<SubscribeShowController>(
       builder: (controller) => Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.arrow_back, color: Colors.black),
-          ),
           backgroundColor: Colors.transparent,
           centerTitle: false,
           elevation: 0,

@@ -35,14 +35,15 @@ class ErrorHandlingInterceptor extends Interceptor {
           status: MessageStatus.ERROR);
       AppUtils.logout();
     } else {
-      if (!_isErrorCodeHandled) {
+      if (err.response != null && !_isErrorCodeHandled) {
         print(
-            "Error = ${ApiErrorResponseModel.fromJson(err.response?.data).message}");
+            "Error = ${ApiErrorResponseModel.fromJson(err.response!.data).message}");
         AppUtils.showSnackBar(
-            "${ApiErrorResponseModel.fromJson(err.response?.data).message}",
+            "${ApiErrorResponseModel.fromJson(err.response!.data).message}",
             status: MessageStatus.ERROR);
       }
     }
+
     super.onError(err, handler);
   }
 }

@@ -12,67 +12,74 @@ class WelcomeScreen extends StatelessWidget {
         body: Column(
           children: [
             Expanded(
-              child: PageView.builder(
-                controller: controller.pageController,
-                itemCount: controller.contents.length,
-                onPageChanged: (index) =>
-                    controller.selectedPageIndex.value = index,
-                itemBuilder: (_, i) => Padding(
-                  padding: const EdgeInsets.fromLTRB(50, 100, 50, 0),
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        controller.contents[i].image,
-                        height: 400,
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  return PageView.builder(
+                    controller: controller.pageController,
+                    itemCount: controller.contents.length,
+                    onPageChanged: (index) =>
+                        controller.selectedPageIndex.value = index,
+                    itemBuilder: (_, i) => Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: constraints.maxWidth * 0.1,
+                        vertical: constraints.maxHeight * 0.2,
                       ),
-                      const SizedBox(height: 10),
-                      Text(
-                        controller.contents[i].description,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 30,
-                          color: Color(0xFFAB3CFF),
-                        ),
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            controller.contents[i].image,
+                            height: constraints.maxHeight * 0.4,
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            controller.contents[i].description,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: constraints.maxWidth * 0.06,
+                              color: Color(0xFFAB3CFF),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
+                    ),
+                  );
+                },
               ),
             ),
-            Obx(()=>Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(
-                  controller.contents.length,
-                  (index) => buildDot(index, context),
-                ),
-              ),
-            )),
-            Obx(()=> Container(
-              height: 60,
-              margin: EdgeInsets.all(40),
-              width: double.infinity,
-              child: TextButton(
-                onPressed: () => controller.forwardAction(),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                    Color(0xFFAB3CFF),
-                  ),
-                  shape: MaterialStateProperty.all<OutlinedBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
+            Obx(() => Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      controller.contents.length,
+                      (index) => buildDot(index, context),
                     ),
                   ),
-                ),
-                child: Text(
-                  controller.isLastPage ? "Continue" : "Next",
-                  style: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
+                )),
+            Obx(() => Container(
+                  height: 60,
+                  margin: EdgeInsets.all(40),
+                  width: double.infinity,
+                  child: TextButton(
+                    onPressed: () => controller.forwardAction(),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                        Color(0xFFAB3CFF),
+                      ),
+                      shape: MaterialStateProperty.all<OutlinedBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                    ),
+                    child: Text(
+                      controller.isLastPage ? "Continue" : "Next",
+                      style: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
-                ),
-              ),
-            )),
+                )),
           ],
         ),
       ),

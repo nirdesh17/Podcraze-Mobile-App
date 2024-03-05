@@ -42,10 +42,19 @@ class InterestCategoryScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 20.0), // Add space below text
-                        Wrap(
-                          spacing: 30.0,
-                          runSpacing: 10.0,
-                          children: controller.categories.map((category) {
+                        GridView.builder(
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
+                            mainAxisSpacing: 10.0,
+                            crossAxisSpacing: 30.0,
+                            childAspectRatio: 2,
+                          ),
+                          itemCount: controller.categories.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            final category = controller.categories[index];
                             return ChoiceChip(
                               label: Text(category.name!),
                               selected: category.isSelected,
@@ -69,44 +78,80 @@ class InterestCategoryScreen extends StatelessWidget {
                                     : Color(0xFFAB3CFF), // Set text color
                               ),
                             );
-                          }).toList(),
+                          },
                         ),
                         SizedBox(height: 30.0), // Add space below chips
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            ElevatedButton(
-                              style: ButtonStyle(
-                                fixedSize:
-                                    MaterialStateProperty.all(Size(170, 50)),
-                                textStyle: MaterialStateProperty.all<TextStyle>(
-                                    TextStyle(fontSize: 18)),
-                                foregroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        Color(0xFFAB3CFF)),
+                            Expanded(
+                              child: ElevatedButton(
+                                style: ButtonStyle(
+                                  padding: MaterialStateProperty.all<
+                                      EdgeInsetsGeometry>(
+                                    EdgeInsets.symmetric(vertical: 16),
+                                  ),
+                                  textStyle:
+                                      MaterialStateProperty.all<TextStyle>(
+                                    TextStyle(fontSize: 18),
+                                  ),
+                                  foregroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    Color(0xFFAB3CFF),
+                                  ),
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    Colors.white,
+                                  ),
+                                  shape:
+                                      MaterialStateProperty.all<OutlinedBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                      side: BorderSide(
+                                        color: Color(0xFFAB3CFF),
+                                        width: 1.0,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  // Add skip button functionality
+                                },
+                                child: Text('Skip'),
                               ),
-                              onPressed: () {
-                                // Add skip button functionality
-                              },
-                              child: Text('Skip'),
                             ),
-                            ElevatedButton(
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        Color(0xFFAB3CFF)),
-                                fixedSize:
-                                    MaterialStateProperty.all(Size(170, 50)),
-                                textStyle: MaterialStateProperty.all<TextStyle>(
-                                    TextStyle(fontSize: 18)), // Text style
-                                foregroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        Colors.white), // Text color
+                            SizedBox(width: 20), // Add space between buttons
+                            Expanded(
+                              child: ElevatedButton(
+                                style: ButtonStyle(
+                                  padding: MaterialStateProperty.all<
+                                      EdgeInsetsGeometry>(
+                                    EdgeInsets.symmetric(vertical: 16),
+                                  ),
+                                  textStyle:
+                                      MaterialStateProperty.all<TextStyle>(
+                                    TextStyle(fontSize: 18),
+                                  ),
+                                  foregroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    Colors.white,
+                                  ),
+                                  backgroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                    Color(0xFFAB3CFF),
+                                  ),
+                                  shape:
+                                      MaterialStateProperty.all<OutlinedBorder>(
+                                    RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                  ),
+                                ),
+                                onPressed: () {
+                                  controller.sendCategories();
+                                },
+                                child: Text('Continue'),
                               ),
-                              onPressed: () {
-                                controller.sendCategories();
-                              },
-                              child: Text('Continue'),
                             ),
                           ],
                         ),

@@ -22,9 +22,10 @@ class SigninScreen extends StatelessWidget {
                       Icons.arrow_back,
                       color: Colors.black,
                     )),
-                backgroundColor: Colors.transparent,
+                backgroundColor: Colors.white,
                 centerTitle: false,
                 elevation: 0,
+                title: Text('Sign In'),
               ),
               body: Obx(() => controller.isLoading.value
                   ? const Center(child: CircularProgressIndicator())

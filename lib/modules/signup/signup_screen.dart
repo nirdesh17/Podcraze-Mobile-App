@@ -14,6 +14,7 @@ class SignupScreen extends StatelessWidget {
         builder: (controller) => Scaffold(
               backgroundColor: Colors.white,
               appBar: AppBar(
+                shadowColor: Colors.black,
                 leading: IconButton(
                     onPressed: () {
                       Get.back();
@@ -22,9 +23,10 @@ class SignupScreen extends StatelessWidget {
                       Icons.arrow_back,
                       color: Colors.black,
                     )),
-                backgroundColor: Colors.transparent,
+                backgroundColor: Colors.white,
                 centerTitle: false,
                 elevation: 0,
+                title: Text('Sign Up'),
               ),
               body: Obx(() => controller.isLoading.value
                   ? const Center(child: CircularProgressIndicator())
