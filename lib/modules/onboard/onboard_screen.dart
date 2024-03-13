@@ -31,6 +31,31 @@ class OnboardScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    SizedBox(height: 20), // Adjust spacing as needed
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(16),
+                      child: TextButton(
+                        onPressed: () => controller.forwardAction(),
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                            Color(0xFFAB3CFF),
+                          ),
+                          shape: MaterialStateProperty.all<OutlinedBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                          ),
+                        ),
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
                     RichText(
                       text: TextSpan(
                         children: [
@@ -55,31 +80,9 @@ class OnboardScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 20), // Adjust spacing as needed
-                    Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.all(16),
-                      child: ElevatedButton(
-                        onPressed: () => controller.forwardAction(),
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                            Color(0xFFAB3CFF),
-                          ),
-                          shape: MaterialStateProperty.all<OutlinedBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                        ),
-                        child: Text(
-                          "Sign Up",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ),
+                    SizedBox(
+                      height: 30,
+                    )
                   ],
                 ),
               ),

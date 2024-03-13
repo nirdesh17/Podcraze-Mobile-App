@@ -268,7 +268,7 @@ class SignupScreen extends StatelessWidget {
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold),
                                   shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12)),
+                                      borderRadius: BorderRadius.circular(30)),
                                   backgroundColor: const Color(0xFFAB3CFF),
                                 )),
                           ),

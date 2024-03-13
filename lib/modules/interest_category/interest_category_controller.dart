@@ -13,7 +13,7 @@ class InterestCategoryController extends GetxController {
   var isLoading = false.obs;
   List<InterestCategory> categories = <InterestCategory>[].obs;
   List<UserInterestCategory> selectedCategories = <UserInterestCategory>[].obs;
-  var token = "".obs;
+
   final arguments = Get.arguments;
   var userId = "";
 
