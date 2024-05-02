@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/navigation_menu/navigation_binding.dart';
+import '../modules/navigation_menu/navigation_screen.dart';
 import '../modules/home/home_binding.dart';
 import '../modules/home/home_screen.dart';
 import '../modules/subscribe_show/subscribe_show_binding.dart';
@@ -40,7 +42,7 @@ class AppPages {
         binding: OnboardBinding()),
     GetPage(
         name: AppRoutes.signupScreen,
-        page: (() => SignupScreen()),
+        page: () => SignupScreen(),
         binding: SignupBinding()),
     GetPage(
         name: AppRoutes.signinScreen,
@@ -70,5 +72,9 @@ class AppPages {
         name: AppRoutes.homeScreen,
         page: () => HomeScreen(),
         binding: HomeBinding()),
+    GetPage(
+        name: AppRoutes.navigationMenu,
+        page: () => NavigationMenu(),
+        bindings: [NavigationBinding()]),
   ];
 }

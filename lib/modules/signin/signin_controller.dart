@@ -46,10 +46,7 @@ class SigninController extends GetxController {
       var response =
           await signInApi.signIn(signInPostBodyModel: signInPostBodyModel);
 
-      
       if (response.code == 200 || response.code == 210) {
-
-        
         GetStorage().remove(KEY_IS_API_ERROR_HANDLE);
         await localStorage.write(KEY_USER_DATA, response.toJson());
         isLoading.value = false;
@@ -62,7 +59,7 @@ class SigninController extends GetxController {
         } else if (subscribedShow == null || subscribedShow.isEmpty) {
           Get.offNamed(AppRoutes.subscribeShowScreen);
         } else {
-          Get.offNamed(AppRoutes.homeScreen);
+          Get.offNamed(AppRoutes.navigationMenu);
         }
         // Get.offNamed(
         //   AppRoutes.interestCategoryScreen,

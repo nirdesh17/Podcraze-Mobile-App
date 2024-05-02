@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:podcraze/utils/constants.dart';
+
+import '../../utils/constants.dart';
 
 class HomeController extends GetxController {
   final localStorage = GetStorage();
