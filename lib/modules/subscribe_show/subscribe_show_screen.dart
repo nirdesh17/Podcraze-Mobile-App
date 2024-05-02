@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+
 import '../../modules/subscribe_show/subscribe_show_controller.dart';
 
 class SubscribeShowScreen extends StatelessWidget {
@@ -109,7 +110,9 @@ class SubscribeShowScreen extends StatelessWidget {
                           SizedBox(width: screenWidth * 0.04),
                           Expanded(
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                controller.sendShows();
+                              },
                               style: ElevatedButton.styleFrom(
                                 textStyle:
                                     TextStyle(fontSize: screenWidth * 0.045),

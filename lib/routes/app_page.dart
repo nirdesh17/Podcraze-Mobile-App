@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/home/home_binding.dart';
+import '../modules/home/home_screen.dart';
 import '../modules/subscribe_show/subscribe_show_binding.dart';
 import '../modules/subscribe_show/subscribe_show_screen.dart';
 import '../modules/verify_otp/verify_otp_binding.dart';
@@ -64,5 +66,9 @@ class AppPages {
         name: AppRoutes.subscribeShowScreen,
         page: () => SubscribeShowScreen(),
         binding: SubscribeShowBinding()),
+    GetPage(
+        name: AppRoutes.homeScreen,
+        page: () => HomeScreen(),
+        binding: HomeBinding()),
   ];
 }
